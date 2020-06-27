@@ -1,0 +1,11 @@
+<mat-form-field appearance="legacy" class="w-100" id="form-field">
+  <mat-label>Rechercher un lieu</mat-label>
+  <input matInput type="text" [(ngModel)]="searchImput" (ngxInputSearch)="doSearch($event)" [stringLength]="3" (emptyInput)="resultats=[]">
+</mat-form-field>
+<div class="contentResult" id="resul">
+  <div class="mb-1" *ngFor="let r of resultats" (click)="emitChoice(r)">
+    <h5 class="py-2 cursor-pointer hover-bg-muted">{{r.display_name}}</h5>
+    <mat-divider></mat-divider>
+  </div>
+</div>
+

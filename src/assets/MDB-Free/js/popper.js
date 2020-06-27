@@ -872,7 +872,7 @@ function findIndex(arr, prop, value) {
  * @memberof Popper.Utils
  * @param {dataObject} data
  * @param {Array} modifiers
- * @param {String} ends - Optional modifier name used as stopper
+ * @param {String} ends - Optional modifier display_name used as stopper
  * @returns {dataObject}
  */
 function runModifiers(modifiers, data, ends) {
@@ -966,7 +966,7 @@ function isModifierEnabled(modifiers, modifierName) {
 }
 
 /**
- * Get the prefixed supported property name
+ * Get the prefixed supported property display_name
  * @method
  * @memberof Popper.Utils
  * @argument {String} property (camelCase)
@@ -1366,8 +1366,8 @@ function computeStyle(data, options) {
  * @method
  * @memberof Popper.Utils
  * @param {Array} modifiers - list of modifiers
- * @param {String} requestingName - name of requesting modifier
- * @param {String} requestedName - name of requested modifier
+ * @param {String} requestingName - display_name of requesting modifier
+ * @param {String} requestedName - display_name of requested modifier
  * @returns {Boolean}
  */
 function isModifierRequired(modifiers, requestingName, requestedName) {
@@ -2334,7 +2334,7 @@ var modifiers = {
 /**
  * The `dataObject` is an object containing all the information used by Popper.js.
  * This object is passed to modifiers and to the `onCreate` and `onUpdate` callbacks.
- * @name dataObject
+ * @display_name dataObject
  * @property {Object} data.instance The Popper.js instance
  * @property {String} data.placement Placement applied to popper
  * @property {String} data.originalPlacement Placement originally defined on init
@@ -2486,7 +2486,7 @@ var Popper = function () {
     // modifiers have the ability to execute arbitrary code when Popper.js get inited
     // such code is executed in the same order of its modifier
     // they could add new properties to their options configuration
-    // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
+    // BE AWARE: don't add options to `options.modifiers.display_name` but to `modifierOptions`!
     this.modifiers.forEach(function (modifierOptions) {
       if (modifierOptions.enabled && isFunction(modifierOptions.onLoad)) {
         modifierOptions.onLoad(_this.reference, _this.popper, _this.options, modifierOptions, _this.state);
@@ -2569,7 +2569,7 @@ var Popper = function () {
  * ```
  *
  * NB: This feature isn't supported in Internet Explorer 10.
- * @name referenceObject
+ * @display_name referenceObject
  * @property {Function} data.getBoundingClientRect
  * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
  * @property {number} data.clientWidth

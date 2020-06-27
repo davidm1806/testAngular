@@ -28,6 +28,7 @@
               "src/assets/MDB-Free/css/bootstrap.css",
               "src/assets/MDB-Free/scss/mdb-free.scss",
               "src/assets/MDB-Free/css/mdb.css",
+              "./node_modules/leaflet/dist/leaflet.css",
               "src/styles.scss"
             ],
             "scripts": []

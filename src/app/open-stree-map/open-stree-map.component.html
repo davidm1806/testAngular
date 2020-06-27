@@ -1,0 +1,10 @@
+<div id="map"
+     leaflet
+     [leafletOptions]="mapOptions" (leafletMapReady)="onMapReady($event)">
+</div>
+<div class="col-md-6 mt-5">
+  <app-map-point-form (response)="updatePosition($event)"></app-map-point-form>
+</div>
+
+
+<div style="height: 300px"></div>
